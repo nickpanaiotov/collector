@@ -1,0 +1,21 @@
+version: '2'
+services:
+  collector:
+    image: "wallet-collector:latest"
+    ports:
+     - "8080:8080"
+    links:
+      - "db:redis"
+  db:
+    image: "redis:latest"
+    command: redis-server --appendonly yes
+    hostname: redis
+    volumes:
+      - /Volumes/Docker/data:/data
+    ports:
+     - "6379:6379"
+  node:
+    image: "wallet-node:latest"
+    command: http://gru.local:8080/blocks/ latest
+    links:
+      - "collector:collector"
