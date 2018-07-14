@@ -1,6 +1,6 @@
 #  Шашкънье-collector
 
-Collecting wallets from etherium blockchain by their public keys.
+Collecting wallets from ethereum blockchain by their public keys.
       For "researching purposes" and a "good cause". 
       
 ## Services
